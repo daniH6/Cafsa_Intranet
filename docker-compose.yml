@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: intranet
+    volumes:
+      - .:/var/www/html
+      - C:/instantclient:/opt/oracle  # Monta los ZIP desde tu PC
+    working_dir: /var/www/html/laravel12
+    ports:
+      - "8000:8000"
+    tty: true
